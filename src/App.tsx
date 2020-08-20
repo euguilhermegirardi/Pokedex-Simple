@@ -1,17 +1,19 @@
-import React from "react";
+import React, { Component } from "react";
 import { Normalize } from "styled-normalize";
 
 import GlobalStyle from "./styles";
-import Main from "./components/Main";
+import PokemonSearch from "./components/Main/PokemonSearch";
 
-function App() {
-   return (
-      <>
-         <Normalize />
-         <GlobalStyle />
-         <Main pokemon={null} />
-      </>
-   );
+class App extends Component {
+   render() {
+      return (
+         <>
+            <Normalize />
+            <GlobalStyle />
+            <PokemonSearch />
+         </>
+      );
+   }
 }
 
 export default App;
