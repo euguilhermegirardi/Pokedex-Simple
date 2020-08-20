@@ -9,16 +9,22 @@ export const Title = styled.div`
 `;
 
 export const StyledContainer = styled.div`
-   background: #ffffff;
-   border-radius: 4px;
-   box-sizing: border-box;
    display: flex;
    flex-direction: column;
    justify-content: space-between;
+   align-items: center;
+
+   background: #ffffff;
+   border-radius: 4px;
+   box-sizing: border-box;
 
    -webkit-box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.2);
    -moz-box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.2);
    box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.2);
+`;
+
+export const StyledCardBody = styled.div`
+   margin-bottom: 1rem;
 `;
 
 export const StyledCardPhotoContainer = styled.div`
@@ -31,13 +37,14 @@ export const StyledCardPhotoContainer = styled.div`
 `;
 
 export const StyledName = styled.p`
-   background-color: #7754f8;
    color: #090f34;
    font-size: 24px;
    font-weight: bold;
    margin: 0;
    text-align: center;
    text-transform: capitalize;
+   border-radius: 2px;
+   padding: 0.5rem;
 `;
 
 export const SearchContainer = styled.div`
@@ -55,5 +62,10 @@ export const Button = styled.button`
    padding: 1rem;
    cursor: pointer;
    outline: none;
-   margin-left: 1rem;
+   margin-top: 0.5rem;
+`;
+
+export const Input = styled.input`
+   width: 10rem;
+   margin-top: 1rem;
 `;

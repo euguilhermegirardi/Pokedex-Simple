@@ -3,8 +3,10 @@ import React, { Component } from "react";
 import {
    Title,
    Button,
+   Input,
    StyledContainer,
    StyledCardPhotoContainer,
+   StyledCardBody,
    StyledName,
    SearchContainer,
 } from "./styles";
@@ -65,20 +67,31 @@ export default class PokemonSearch extends Component<{}, SearchState> {
       } else if (this.state.pokemon) {
          resultMarkup = (
             <div>
-               <img src={pokemon.imageUrl} alt={pokemon.name} />
-               <p>
-                  {pokemon.name} has {pokemon.numberOfAbilities} abilities and{" "}
-                  {pokemon.baseExperience} base experience points.
-               </p>
+               <StyledCardPhotoContainer>
+                  <img src={pokemon.imageUrl} alt={pokemon.name} />
+               </StyledCardPhotoContainer>
+               <StyledCardBody>
+                  <StyledName>
+                     {pokemon.name} has {pokemon.numberOfAbilities} abilities
+                     and {pokemon.baseExperience} base experience points
+                  </StyledName>
+               </StyledCardBody>
             </div>
          );
       }
 
       return (
          <>
-            {resultMarkup}
-            <input type="text" ref={this.pokemonRef} />
-            <button onClick={this.handleSearch}>Search for Pokemons!</button>
+            <Title>POKEDEX</Title>
+            <StyledContainer>
+               {resultMarkup}
+               <Input
+                  type="text"
+                  placeholder="Which Pokemon?"
+                  ref={this.pokemonRef}
+               />
+               <Button onClick={this.handleSearch}>Search for Pokemons!</Button>
+            </StyledContainer>
          </>
       );
    }
